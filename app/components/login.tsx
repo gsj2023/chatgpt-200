@@ -24,7 +24,7 @@ export function Login() {
   }, []);
 
   function getCode() {
-    axios.get("https://test.abab6.cn/common/captcha").then((res) => {
+    axios.get("https://test.abab3.cn/common/captcha").then((res) => {
       console.log(res.data.data);
       loginInfo.key = res.data.data.key;
       setImage(res.data.data.image);
@@ -35,7 +35,7 @@ export function Login() {
     console.log(loginInfo);
     await axios({
       method: "post",
-      url: "https://test.abab6.cn/common/login",
+      url: "https://test.abab3.cn/common/login",
       data: loginInfo,
       withCredentials: true,
     }).then((res) => {

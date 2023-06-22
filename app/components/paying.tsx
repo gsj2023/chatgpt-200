@@ -30,7 +30,7 @@ export function Paying() {
   const paying = () => {
     axios({
       method: "get",
-      url: "https://test.abab6.cn/user/getCode",
+      url: "https://test.abab3.cn/user/getCode",
       withCredentials: true,
       params: {
         commodityId,
@@ -52,7 +52,7 @@ export function Paying() {
         };
         axios({
           method: "post",
-          url: "https://test.abab6.cn/order/query",
+          url: "https://test.abab3.cn/order/query",
           data,
           withCredentials: true,
         }).then(() => {

@@ -35,7 +35,7 @@ export function Register() {
     console.log(registerInfo);
     axios({
       method: "post",
-      url: "https://test.abab6.cn/common/register",
+      url: "https://test.abab3.cn/common/register",
       data: registerInfo,
       withCredentials: true,
     }).then((res) => {
@@ -54,7 +54,7 @@ export function Register() {
   }, []);
 
   function getCode() {
-    axios.get("https://test.abab6.cn/common/captcha").then((res) => {
+    axios.get("https://test.abab3.cn/common/captcha").then((res) => {
       registerInfo.key = res.data.data.key;
       setImage(res.data.data.image);
     });

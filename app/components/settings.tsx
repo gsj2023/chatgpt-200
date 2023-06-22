@@ -291,7 +291,7 @@ export function Settings() {
 
     axios({
       method: "get",
-      url: "https://test.abab6.cn/user/checklogin",
+      url: "https://test.abab3.cn/user/checklogin",
       withCredentials: true,
     }).then((res) => {
       console.log(res);
@@ -323,7 +323,7 @@ export function Settings() {
   const getExpire = () => {
     axios({
       method: "get",
-      url: "https://test.abab6.cn/user/getexpire",
+      url: "https://test.abab3.cn/user/getexpire",
       withCredentials: true,
     }).then((res) => {
       setExpire(res.data.data);
@@ -333,7 +333,7 @@ export function Settings() {
   const getCurrentNumber = () => {
     axios({
       method: "get",
-      url: "https://test.abab6.cn/user/getCurrentNumber",
+      url: "https://test.abab3.cn/user/getCurrentNumber",
       withCredentials: true,
     }).then((res) => {
       setCurrentTime(res.data.data);
@@ -344,7 +344,7 @@ export function Settings() {
     if (localStorage.getItem("userInfo")) {
       axios({
         method: "get",
-        url: "https://test.abab6.cn/common/logout",
+        url: "https://test.abab3.cn/common/logout",
         withCredentials: true,
       }).then((res) => {
         if (res.data.code === 200) {
@@ -361,7 +361,7 @@ export function Settings() {
     if (event.key === "Enter") {
       axios({
         method: "post",
-        url: "https://test.abab6.cn/redemption/getRedem",
+        url: "https://test.abab3.cn/redemption/getRedem",
         data: {
           code,
           username: JSON.parse(localStorage.getItem("userInfo")!).username,
@@ -386,7 +386,7 @@ export function Settings() {
     if (event.target.value.length == 16) {
       axios({
         method: "post",
-        url: "https://test.abab6.cn/redemption/getRedem",
+        url: "https://test.abab3.cn/redemption/getRedem",
         data: {
           code:event.target.value,
           username: JSON.parse(localStorage.getItem("userInfo")!).username,
