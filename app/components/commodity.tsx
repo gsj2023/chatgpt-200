@@ -20,7 +20,7 @@ export function Commodity() {
   const navigate = useNavigate();
 
   const goPaying = (id: number) => {
-    window.open('https://www.baidu.com', '_blank');
+    navigate(`${Path.Paying}/${id}`);
   };
 
   const getCommodity = () => {

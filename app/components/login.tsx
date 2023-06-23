@@ -108,6 +108,12 @@ export function Login() {
           >
             登录问题联系客服qq：188811811
           </div>
+          <div
+            className="footer"
+            style={{ fontSize: "12px", marginTop: "20px" }}
+          >
+            搭建同款源码联系客服
+          </div>
         </div>
       </div>
     </div>
