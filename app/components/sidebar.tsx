@@ -129,7 +129,7 @@ export function SideBar(props: { className?: string }) {
   	 <a href="https://bbs.91chuangye.cn/" target="_blank">【2】91创业网技术支持  www.91chuangye.cn</a>
         </div>
         <div className={styles["sidebar-sub-title"]}>
-  	 <a href="https://ai.abab3.cn/" target="_blank">【3】售后客服微信：188811811</a>
+  	 <a href="https://ai.abab3.cn/" target="_blank">【3】请贴加，售后客服，微信：188811811</a>
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
