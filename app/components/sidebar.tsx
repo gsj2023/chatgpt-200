@@ -126,7 +126,10 @@ export function SideBar(props: { className?: string }) {
   	 <a href="https://bbs.91chuangye.cn/2023/06/22/28525/" target="_blank">【1】使用教程，看一遍就会，点此查看</a>
         </div>
         <div className={styles["sidebar-sub-title"]}>
-  	 <a href="https://ai.abab3.cn/" target="_blank">【2】售后客服微信：188811811</a>
+  	 <a href="https://bbs.91chuangye.cn/" target="_blank">【2】91创业网技术支持  www.91chuangye.cn</a>
+        </div>
+        <div className={styles["sidebar-sub-title"]}>
+  	 <a href="https://ai.abab3.cn/" target="_blank">【3】售后客服微信：188811811</a>
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
@@ -179,7 +182,7 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank">
+            <a href="https://ai.abab3.cn/" target="_blank">
               <IconButton icon={<GithubIcon />} shadow />
             </a>
           </div>
