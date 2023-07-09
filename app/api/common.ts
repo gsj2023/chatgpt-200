@@ -8,8 +8,8 @@ const DISABLE_GPT4 = !!process.env.DISABLE_GPT4;
 
 export async function requestOpenai(req: NextRequest) {
   const controller = new AbortController();
-  const authValue = req.headers.get("Authorization") ?? "";
-  // let authValue = "";
+  // const authValue = req.headers.get("Authorization") ?? "";
+  let authValue = "";
   const openaiPath = `${req.nextUrl.pathname}${req.nextUrl.search}`.replaceAll(
     "/api/openai/",
     "",
@@ -32,16 +32,18 @@ export async function requestOpenai(req: NextRequest) {
     controller.abort();
   }, 10 * 60 * 1000);
 
-  // let clonedReq = req.clone();
-  // const clonedBody = await clonedReq.text();
-  // const jsonBody = JSON.parse(clonedBody);
-  // if(jsonBody.model.includes("gpt-3.5")){
-  //   const apiKeys = (process.env.OPENAI_API_KEY ?? '').split(',')
-  //   authValue = 'Bearer '+ apiKeys.at(Math.floor(Math.random() * apiKeys.length )) ?? ''
-  // }else{
-  //   const apiKeys = (process.env.OPENAI_API_FOUR_KEY ?? '').split(',')
-  //   authValue = 'Bearer ' + apiKeys.at(Math.floor(Math.random() * apiKeys.length )) ?? ''
-  // }
+  let clonedReq = req.clone();
+  const clonedBody = await clonedReq.text();
+  const jsonBody = JSON.parse(clonedBody);
+  if (jsonBody.model.includes("gpt-3.5")) {
+    const apiKeys = (process.env.OPENAI_API_KEY ?? "").split(",");
+    authValue =
+      "Bearer " + apiKeys.at(Math.floor(Math.random() * apiKeys.length)) ?? "";
+  } else {
+    const apiKeys = (process.env.OPENAI_API_FOUR_KEY ?? "").split(",");
+    authValue =
+      "Bearer " + apiKeys.at(Math.floor(Math.random() * apiKeys.length)) ?? "";
+  }
 
   const fetchUrl = `${baseUrl}/${openaiPath}`;
   const fetchOptions: RequestInit = {
@@ -54,7 +56,7 @@ export async function requestOpenai(req: NextRequest) {
     },
     cache: "no-store",
     method: req.method,
-    body: req.body,
+    body: JSON.stringify(jsonBody),
     signal: controller.signal,
   };
 
@@ -62,7 +64,7 @@ export async function requestOpenai(req: NextRequest) {
   if (DISABLE_GPT4 && req.body) {
     try {
       const clonedBody = await req.text();
-      fetchOptions.body = clonedBody;
+      fetchOptions.body = JSON.stringify(clonedBody);
 
       const jsonBody = JSON.parse(clonedBody);
 
