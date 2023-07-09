@@ -40,6 +40,7 @@ export async function requestOpenai(req: NextRequest) {
     authValue =
       "Bearer " + apiKeys.at(Math.floor(Math.random() * apiKeys.length)) ?? "";
   } else {
+    baseUrl = "https://gptapi.nextweb.fun/api/openai";
     const apiKeys = (process.env.OPENAI_API_FOUR_KEY ?? "").split(",");
     authValue =
       "Bearer " + apiKeys.at(Math.floor(Math.random() * apiKeys.length)) ?? "";
