@@ -548,7 +548,7 @@ export function Chat() {
     ) {
       axios({
         method: "get",
-        url: "https://test.abab3.cn/user/checkexpirethree",
+        url: "https://test.abab2.cn/user/checkexpirethree",
         withCredentials: true,
       }).then((res) => {
         if (res.data.code == 200) {
@@ -567,7 +567,7 @@ export function Chat() {
     } else {
       axios({
         method: "get",
-        url: "https://test.abab3.cn/user/checkexpire",
+        url: "https://test.abab2.cn/user/checkexpire",
         withCredentials: true,
       }).then((res) => {
         if (res.data.code == 200) {
@@ -594,7 +594,7 @@ export function Chat() {
   useEffect(() => {
     axios({
       method: "get",
-      url: "https://test.abab3.cn/user/checklogin",
+      url: "https://test.abab2.cn/user/checklogin",
       withCredentials: true,
     }).then((res) => {
       if (res.data.code != 200) {
