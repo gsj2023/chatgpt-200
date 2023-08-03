@@ -517,7 +517,7 @@ export function Settings() {
             </span>
             {/* </Link> */}
           </ListItem>
-          <ListItem title="gpt 4.0当前剩余对话次数(每三小时刷新)">
+          <ListItem title="Ai 4.0当前剩余对话次数(每三小时刷新)">
             <span>{currentTime}</span>
           </ListItem>
 
